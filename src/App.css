@@ -1,0 +1,76 @@
+
+@import "tailwindcss";
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@layer utilities {
+  .typewriter {
+    @apply relative overflow-hidden whitespace-nowrap font-mono border-r-2 border-gray-200;
+    width: 35ch;
+    border-right-width: 3px;
+    animation: typing 5s steps(90, end) forwards, blink 1.2s step-end infinite;
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 0s, 7s, 14s, 21s; /* sync the sequence */
+    /* animation-duration: 5s, 7s, 14s, 21s; */
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    to {
+      width: 35ch;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes blink {
+    0% { border-color: indigo-500; }
+    90% { border-color: indigo-500; }
+    100% { border-color: transparent; }
+  }
+}
