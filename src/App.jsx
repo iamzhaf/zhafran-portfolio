@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, Code2 } from "lucide-react";
 import "./App.css";
+import WorkTimeline from "./components/WorkTimeLine";
 
 
 const years_experience = 8;
@@ -65,7 +66,7 @@ export default function Portfolio() {
     <section className="w-full">
     <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100" : "min-h-screen bg-white text-neutral-900"}>
       {/* ==================================== NAVBAR ==================================== */}
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/70 dark:bg-neutral-900/60 border-b border-neutral-200/40 dark:border-neutral-800">
+      <header className={`sticky top-0 z-100 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/70 dark:bg-neutral-900/60 border-b border-neutral-200/40 dark:border-neutral-800 ${dark ? "text-white" : "text-white"}`}>
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow">
@@ -73,7 +74,7 @@ export default function Portfolio() {
             </div>
             <span className="font-semibold">{PROFILE.banner_message}</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm opacity-90">
+          <nav className="hidden md:flex items-center gap-6 text-sm opacity-50 text-white z-150">
             <a href="#about" className="hover:opacity-100">About</a>
             <a href="#projects" className="hover:opacity-100">Projects</a>
             <a href="#skills" className="hover:opacity-100">Skills</a>
@@ -119,7 +120,7 @@ export default function Portfolio() {
               </p>
             </div>  
           </div>
-          <div className="md:w-3/8 w-full flex-shrink-0">
+          <div className="md:w-3/8 max-w-screen-lg mx-auto">
             <div className="relative rounded-3xl p-1 bg-gradient-to-br from-indigo-500 via-violet-600 to-fuchsia-500 shadow-lg">
               <div className={dark ? "rounded-3xl p-6 md:p-10 bg-black dark:bg-neutral-900" : "rounded-3xl p-6 md:p-10 bg-white dark:bg-neutral-100 text-black dark:text-neutral-100"}>
                 <div className="grid grid-cols-2 gap-4 md:gap-6">
@@ -145,6 +146,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
 
       {/* ABOUT */}
       <section
@@ -175,10 +177,16 @@ export default function Portfolio() {
             </p>
           </div>
         </div>
+
+        {/* WORK TIMELINE */} 
+        <div className="mt-16">
+          <WorkTimeline />
+        </div>
+
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="mx-auto max-w-6xl px-4 py-12 border-t border-neutral-200/60 dark:border-neutral-800/60">
+      <section id="projects" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Projects</h2>
           <a href="https://github.com/your-username?tab=repositories" target="_blank" className="text-sm opacity-80 hover:opacity-100">All repos →</a>
@@ -204,11 +212,11 @@ export default function Portfolio() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="mx-auto max-w-6xl px-4 py-12 border-t border-neutral-200/60 dark:border-neutral-800/60">
-        <h2 className="text-2xl md:text-3xl font-semibold">Skills</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
+      <section id="skills" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider">Skills</h2>
+        <div className="mt-4 flex flex-wrap gap-2 justify-center items-center max-w-5xl mx-auto">
           {SKILLS.map((s, i) => (
-            <span key={i} className="text-xs md:text-sm px-3 py-1 rounded-full border border-neutral-300 dark:border-neutral-700">
+            <span key={i} className="text-md md:text-lg px-5 py-1 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white">
               {s}
             </span>
           ))}
@@ -216,11 +224,13 @@ export default function Portfolio() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="mx-auto max-w-6xl px-4 py-12 border-t border-neutral-200/60 dark:border-neutral-800/60">
-        <h2 className="text-2xl md:text-3xl font-semibold">Get in touch</h2>
+      <section id="contact" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider">Get in touch</h2>
+        <div className="flex flex-wrap gap-2">
         <p className="mt-3 opacity-80 max-w-3xl">
           Open to full‑time roles and collaborations. The fastest way to reach me is via email or LinkedIn.
         </p>
+        </div>
         <div className="mt-6 flex flex-wrap gap-3">
           <a href={PROFILE.links.email} className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 dark:border-neutral-700 hover:shadow">
             <Mail className="h-4 w-4" /> Email me
