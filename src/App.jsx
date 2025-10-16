@@ -35,21 +35,21 @@ const PROJECTS = [
     description:
       "Plotly Dash / React prototype that scans receipts with GenAI to auto‑categorize expenses. PostgreSQL + RAG for knowledge tips.",
     tech: ["Python", "Dash", "PostgreSQL", "OpenAI"],
-    url: "https://your-demo-or-repo",
+    url: "https://github.com/iamzhaf",
   },
   {
     title: "SmartOps — Manpower Roster Engine",
     description:
       "Flask backend + React front‑end using Google Sheets as a low‑cost DB. Rule‑based planning with export to Excel/PDF.",
     tech: ["Flask", "React", "gspread", "Google Cloud"],
-    url: "https://your-demo-or-repo",
+    url: "https://github.com/iamzhaf",
   },
   {
     title: "Corporate Entities Insights Dashboard",
     description:
       "Plotly dashboards with entity search, filtering, and KPI drill‑downs.",
     tech: ["Python", "Pandas", "Plotly"],
-    url: "https://your-demo-or-repo",
+    url: "https://github.com/iamzhaf",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function Portfolio() {
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow">
-              <Code2 className="h-4 w-4 text-white" />
+              <Corepode2 className="h-4 w-4 text-white" />
               {/* <img src="mz_portfolio.png" alt="MZ Portfolio" className="h-12 w-12" /> */}
             </div>
             <span className="font-semibold">{PROFILE.banner_message}</span>
@@ -156,7 +156,7 @@ export default function Portfolio() {
 
       {/* ABOUT */}
       <section
-        id="about"
+        id="about_muhammad_zhafran_bahaman"
         className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60"
       >
         <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">About Me</h2>
