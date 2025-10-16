@@ -86,7 +86,7 @@ export default function WorkTimeline({ dark_mode }) {
             "
         >
             {/* Top label */}
-            <div className="mb-2 text-center font-mono tracking-wider text-white text-base md:text-lg">
+            <div className={`mb-2 text-center font-mono tracking-wider ${dark_mode ? "text-white" : "text-black"} text-base md:text-lg`}>
             {item.label}
             </div>
 
