@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://iamzhaf.github.io/zhafran-portfolio",
+  "homepage": "https://www.mzmeetsdata.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
