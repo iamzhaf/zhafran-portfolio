@@ -95,7 +95,7 @@ export default function Portfolio() {
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-5/8 w-full">
             <p className={dark ? "typewriter text-xl md:text-4xl text-center text-indigo-600" : "typewriter text-xl md:text-4xl text-center text-indigo-800"}>
-              Hello, I'm <span className="font-bold text-xl md:text-5xl">{PROFILE.name}</span>
+              Hello, I'm <span className="font-bold text-xl md:text-5xl">{PROFILE.name}.</span>
             </p>
             <h1 className={dark ? "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-300" : "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-700"}>
               {PROFILE.header_role}
