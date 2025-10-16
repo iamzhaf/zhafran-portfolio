@@ -4,14 +4,17 @@ import { BiSolidLeftArrow } from "react-icons/bi";
 
 const TIMELINE = [
   { id: 1, label: "Jun 2025 - Sep 2025", year: "2025", title: "Digital Transformation Lead", desc: "TERS Consulting (Construction Company)" },
-  { id: 2, label: "Apr 2024 - Oct 2024", year: "2024", title: "Digital Governance Analyst", desc: "DBS Bank, Singapore" },
+  { id: 2, label: "Apr 2024 - Oct 2024", year: "2024", title: "Data Governance Analyst", desc: "DBS Bank, Singapore" },
   { id: 3, label: "Feb 2024 - Dec 2024", year: "2024", title: "LIBOR Data Analyst, AVP", desc: "Standard Chartered Bank, Singapore" },
   { id: 4, label: "Feb 2023 - Feb 2024", year: "2023", title: "Data Scientist", desc: "Maybank, Singapore" },
-  { id: 5, label: "Feb 2020 - Feb 2023", year: "2023", title: "Data Scientist II", desc: "Validus Capital, Singapore" },
+  { id: 5, label: "Mar 2020 - Mar 2023", year: "2023", title: "Data Scientist II", desc: "Validus Capital, Singapore" },
+  { id: 6, label: "Feb 2019 - Mar 2020", year: "2020", title: "Associate Consultant/Data Analyst", desc: "KPMG, Singapore" },
+  { id: 7, label: "Sep 2018 - Oct 2018", year: "2018", title: "Data Analyst", desc: "Dun & Bradstreet" },
 ];
 
-export default function WorkTimeline() {
+export default function WorkTimeline({ dark_mode }) {
   const trackRef = useRef(null);
+
 
   // Keyboard arrows to move the timeline when the track is focused
   useEffect(() => {
@@ -34,18 +37,18 @@ export default function WorkTimeline() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
       <div className="mb-4 flex flex-col items-center justify-between justify-center">
-        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">Career Journey</h2>
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">Career Timeline</h2>
         <div className="flex gap-2">
           <button
             onClick={() => scrollByAmount(-1)}
-            className="flex items-center justify-center rounded-full w-12 h-12 border border-neutral-700 bg-neutral-800 hover:bg-neutral-700 focus:outline-none focus:ring focus:ring-white/20"
+            className={`flex items-center justify-center rounded-full w-12 h-12 border ${dark_mode ? "bg-neutral-300 hover:bg-neutral-100 focus:outline-none focus:ring focus:ring-white/20  border-indigo-600" : "bg-gray-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-white/20 border-indigo-600"} `}
             aria-label="Previous"
           >
             <BiSolidLeftArrow className="text-indigo-600 text-4xl"/>
           </button>
           <button
             onClick={() => scrollByAmount(1)}
-            className="flex items-center justify-center rounded-full w-12 h-12 border border-neutral-700 bg-neutral-800 hover:bg-neutral-700 focus:outline-none focus:ring focus:ring-white/20"
+            className={`flex items-center justify-center rounded-full w-12 h-12 border ${dark_mode ? "bg-neutral-300 hover:bg-neutral-100 focus:outline-none focus:ring focus:ring-white/20  border-indigo-600" : "bg-gray-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-white/20 border-indigo-600"}`}
             aria-label="Next"
           >
             <BiSolidRightArrow className="text-indigo-600 text-4xl"/>
@@ -60,7 +63,7 @@ export default function WorkTimeline() {
     role="list"
     aria-label="Timeline"
     className="
-        relative min-h-[260px]
+        relative min-h-[280px]
         overflow-x-auto
         snap-x snap-mandatory
         focus:outline-none
@@ -78,7 +81,7 @@ export default function WorkTimeline() {
             aria-label={`${item.label}: ${item.title}`}
             className="
             snap-start shrink-0 relative z-10
-            grid grid-rows-[auto_48px_auto]
+            grid grid-rows-[auto_65px_auto]
             items-center justify-items-center
             "
         >
@@ -88,16 +91,16 @@ export default function WorkTimeline() {
             </div>
 
             {/* Middle row: dot is 48px tall, baseline passes through its center */}
-            <div className="row-start-2 row-end-3 grid place-items-center">
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-indigo-700 to-violet-400 ring-4 ring-neutral-700 shadow grid place-items-center translate-y-[45px]">
+            <div className="row-start-2 row-end-3 grid place-items-start">
+            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-indigo-700 to-violet-400 ring-2 ring-neutral-600 shadow grid place-items-center translate-y-[30px]">
                 <span className="text-xl">🚀</span>
             </div>
             </div>
 
             {/* Bottom card */}
-            <div className="row-start-3 mt-15 w-64 rounded-xl border border-neutral-800 bg-neutral-900/70 p-4 shadow hover:border-neutral-700 translate-y-[30px]">
+            <div className={`row-start-3 mt-5 w-74 rounded-xl p-4 shadow hover:border-neutral-700 translate-y-[35px] ${dark_mode ? "bg-neutral-900/70" : "bg-neutral-400/70"}`}>
             <div className="text-sm font-semibold">{item.title}</div>
-            <p className="mt-1 text-xs text-neutral-300">{item.desc}</p>
+            <p className={dark_mode ? "mt-1 font-medium text-sm text-neutral-300" : "mt-1 font-medium text-sm text-neutral-800"}>{item.desc}</p>
             </div>
         </li>
         ))}

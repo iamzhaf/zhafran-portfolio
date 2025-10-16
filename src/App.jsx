@@ -54,10 +54,9 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  "Python", "SQL", "Pandas", "NumPy", "TensorFlow", "Scikit‑learn", "PySpark", "Flask",
-  "React", "JavaScript", "TypeScript", "TailwindCSS", "Power BI", "Tableau", "Docker",
-  "PostgreSQL", "DuckDB", "GCP",
-];
+  "Python", "SQL", "PostgreSQL" ,"Pandas", "NumPy", "TensorFlow", "Deep Learning", "Statistical Modelling", "Scikit‑learn", "PySpark", "Flask",
+  "React", "JavaScript", "Power BI", "Tableau", "Docker",
+  "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Machine Learning"];
 
 export default function Portfolio() {
   const [dark, setDark] = useState(true);
@@ -71,6 +70,7 @@ export default function Portfolio() {
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow">
               <Code2 className="h-4 w-4 text-white" />
+              {/* <img src="mz_portfolio.png" alt="MZ Portfolio" className="h-12 w-12" /> */}
             </div>
             <span className="font-semibold">{PROFILE.banner_message}</span>
           </div>
@@ -95,7 +95,7 @@ export default function Portfolio() {
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-5/8 w-full">
             <p className={dark ? "typewriter text-xl md:text-4xl text-center text-indigo-600" : "typewriter text-xl md:text-4xl text-center text-indigo-800"}>
-              Hello, I'm <span className="font-bold text-xl md:text-5xl">{PROFILE.name},</span>
+              Hello, I'm <span className="font-bold text-xl md:text-5xl">{PROFILE.name}</span>
             </p>
             <h1 className={dark ? "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-300" : "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-700"}>
               {PROFILE.header_role}
@@ -122,15 +122,19 @@ export default function Portfolio() {
           </div>
           <div className="md:w-3/8 max-w-screen-lg mx-auto">
             <div className="relative rounded-3xl p-1 bg-gradient-to-br from-indigo-500 via-violet-600 to-fuchsia-500 shadow-lg">
-              <div className={dark ? "rounded-3xl p-6 md:p-10 bg-black dark:bg-neutral-900" : "rounded-3xl p-6 md:p-10 bg-white dark:bg-neutral-100 text-black dark:text-neutral-100"}>
+              <div className={dark ? "rounded-3xl p-6 md:p-10 bg-neutral-900 text-white [box-shadow:0_0_0_1px_rgba(168,85,247,0.3),0_0_30px_5px_rgba(168,85,247,0.15)]" : "rounded-3xl p-6 md:p-10 bg-white text-gray-800"}>
                 <div className="grid grid-cols-2 gap-4 md:gap-6">
                   {PROJECTS.slice(0, 4).map((p, i) => (
-                    <article key={i} className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-4 hover:shadow-md transition">
+                    <article key={i} className={`rounded-2xl border p-4 hover:shadow-md transition ${
+                      dark ? 'border-neutral-800' : 'border-neutral-200 bg-white'
+                    }`}>
                       <h3 className="font-semibold text-sm md:text-base">{p.title}</h3>
-                      <p className="mt-1 text-xs md:text-sm opacity-80 line-clamp-3">{p.description}</p>
+                      <p className="mt-1 text-xs md:text-sm text-opacity-80 line-clamp-3">{p.description}</p>
                       <div className="mt-2 flex flex-wrap gap-1">
                         {p.tech.map((t, j) => (
-                          <span key={j} className="text-[10px] md:text-xs px-2 py-0.5 rounded-full border border-neutral-300 dark:border-neutral-700">
+                          <span key={j} className={`text-[10px] md:text-xs px-2 py-0.5 rounded-full border ${
+                            dark ? 'border-neutral-700 bg-neutral-800/50 text-white' : 'border-neutral-300 bg-gray-50 text-gray-800'
+                          }`}>
                             {t}
                           </span>
                         ))}
@@ -138,7 +142,9 @@ export default function Portfolio() {
                     </article>
                   ))}
                 </div>
-                <a href="#projects" className="mt-4 md:mt-6 inline-flex items-center gap-2 text-sm font-medium">
+                <a href="#projects" className={`mt-4 md:mt-6 inline-flex items-center gap-2 text-sm font-medium ${
+                  dark ? 'text-white' : 'text-gray-800'
+                }`}>
                   See all projects <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -177,10 +183,11 @@ export default function Portfolio() {
             </p>
           </div>
         </div>
+        
 
         {/* WORK TIMELINE */} 
         <div className="mt-16">
-          <WorkTimeline />
+          <WorkTimeline dark_mode={dark} />
         </div>
 
       </section>
@@ -225,13 +232,13 @@ export default function Portfolio() {
 
       {/* CONTACT */}
       <section id="contact" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
-        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider">Get in touch</h2>
-        <div className="flex flex-wrap gap-2">
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center">Get in touch</h2>
+        <div className="flex flex-wrap gap-2 justify-center items-center">
         <p className="mt-3 opacity-80 max-w-3xl">
           Open to full‑time roles and collaborations. The fastest way to reach me is via email or LinkedIn.
         </p>
         </div>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-3 justify-center items-center">
           <a href={PROFILE.links.email} className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 dark:border-neutral-700 hover:shadow">
             <Mail className="h-4 w-4" /> Email me
           </a>
