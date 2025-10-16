@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, CodeXml } from "lucide-react";
 import "./App.css";
 import WorkTimeline from "./components/WorkTimeLine";
 
@@ -42,7 +42,7 @@ const PROJECTS = [
     description:
       "Flask backend + React front‑end using Google Sheets as a low‑cost DB. Rule‑based planning with export to Excel/PDF.",
     tech: ["Flask", "React", "gspread", "Google Cloud"],
-    url: "https://github.com/iamzhaf",
+    url: "https://your-demo-or-",
   },
   {
     title: "Corporate Entities Insights Dashboard",
@@ -69,7 +69,7 @@ export default function Portfolio() {
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow">
-              <Corepode2 className="h-4 w-4 text-white" />
+              <CodeXml className="h-4 w-4 text-white" />
               {/* <img src="mz_portfolio.png" alt="MZ Portfolio" className="h-12 w-12" /> */}
             </div>
             <span className="font-semibold">{PROFILE.banner_message}</span>
@@ -156,7 +156,7 @@ export default function Portfolio() {
 
       {/* ABOUT */}
       <section
-        id="about_muhammad_zhafran_bahaman"
+        id="about"
         className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60"
       >
         <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">About Me</h2>
