@@ -65,9 +65,9 @@ export default function Portfolio() {
 
     useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // check immediately
+    handleResize(); // check if there is a resize event immediately
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize); // unmount or remove event listener
   }, []);
 
   return (
@@ -81,7 +81,7 @@ export default function Portfolio() {
               <CodeXml className="h-4 w-4 text-white" />
               {/* <img src="mz_portfolio.png" alt="MZ Portfolio" className="h-12 w-12" /> */}
             </div>
-            <span className="font-semibold">{PROFILE.banner_message}</span>
+            {dark ? <span className="font-semibold">{PROFILE.banner_message}</span>: <span className="font-semibold text-black">{PROFILE.banner_message}</span>}
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm opacity-50 text-white z-150">
             <a href="#about" className="hover:opacity-100">About</a>
@@ -91,7 +91,7 @@ export default function Portfolio() {
           </nav>
           <button
             onClick={() => setDark(!dark)}
-            className="text-xs rounded-xl px-3 py-1 border border-neutral-300 dark:border-neutral-700 hover:shadow"
+            className={`${dark ? "text-white" : "text-black"} text-xs rounded-xl px-3 py-1 border border-neutral-300 dark:border-neutral-700 hover:shadow`}
             aria-label="Toggle theme"
           >
             {dark ? "Light" : "Dark"}
@@ -108,21 +108,24 @@ export default function Portfolio() {
         
         {/* Particles overlay */}
         <ParticlesBackground
-          baseCount={isMobile ? 100 : 300}
+          baseCount={isMobile ? 50 : 300}
           speed={isMobile ? 0.05 : 0.10}
           connect={true}
           color="#ffffff"
-          radius={isMobile ? 1.2 : 2.4}
+          radius={isMobile ? 1.2 : 3}
           linkColor="#ffffff"
           linkDistance={isMobile ? 100 : 200}
           linkOpacity={0.4}
-          lineWidth={2}
+          lineWidth={isMobile ? 1.5 : 2.3}
           zIndex={100}
         />
 
         {/* Content on top of particles */}
         <div className="relative z-20 flex justify-center items-center h-full translate-y-[-50px]">
-          <DigitalClock />
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-1xl font-semibold font-mono text-gray-300">Current Time</p>
+            <DigitalClock isMobileStatus={isMobile ? "mobile" : "desktop"} />
+          </div>
         </div>
       </section>
 
