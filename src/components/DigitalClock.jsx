@@ -29,7 +29,7 @@ export default function DigitalClock() {
 
     return (
         <div>
-            <h1 className="text-7xl font-semibold font-mono text-gray-300 text-shadow-lg/30 tracking-widest ">{formatTime(time)}</h1>
+            <h1 className="text-6xl font-semibold font-mono text-gray-300 text-shadow-lg/30 tracking-widest ">{formatTime(time)}</h1>
         </div>
     );
 }

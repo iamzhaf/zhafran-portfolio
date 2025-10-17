@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, CodeXml } fro
 import "./App.css";
 import WorkTimeline from "./components/WorkTimeLine";
 import DigitalClock from "./components/DigitalClock";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 const years_experience = 8;
 
@@ -92,11 +93,22 @@ export default function Portfolio() {
 
       {/* ====================================  BANNER ========================================= */}
 
-      <section className="mx-auto max-w-full h-[30vh] px-2 py-50 md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat">
-        <div className="flex justify-center h-full translate-y-[-50px]">
+      <section className="relative mx-auto max-w-full h-[35vh] px-2 py-[50px] md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat overflow-hidden">
+        {/* Particles overlay */}
+        <ParticlesBackground
+          count={200}
+          speed={0.05}
+          connect={true}
+          color="rgba(0, 83, 192, 0.6)"
+          trails={true}
+        />
+
+        {/* Content on top of particles */}
+        <div className="relative z-20 flex justify-center items-center h-full translate-y-[-100px]">
           <DigitalClock />
         </div>
       </section>
+
 
       {/* ==================================== HERO SECTION ==================================== */}
       <section className="mx-auto max-w-3/4 px-2 py-16 md:py-24">
