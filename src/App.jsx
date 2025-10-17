@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, CodeXml } from "lucide-react";
 import "./App.css";
 import WorkTimeline from "./components/WorkTimeLine";
@@ -61,6 +61,14 @@ const SKILLS = [
 
 export default function Portfolio() {
   const [dark, setDark] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // check immediately
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section className="w-full">
@@ -100,15 +108,20 @@ export default function Portfolio() {
         
         {/* Particles overlay */}
         <ParticlesBackground
-          count={200}
-          speed={0.05}
+          baseCount={isMobile ? 100 : 300}
+          speed={isMobile ? 0.05 : 0.10}
           connect={true}
-          color="rgba(255, 5, 5, 0.6)"
-          trails={true}
+          color="#ffffff"
+          radius={isMobile ? 1.2 : 2.4}
+          linkColor="#ffffff"
+          linkDistance={isMobile ? 100 : 200}
+          linkOpacity={0.4}
+          lineWidth={2}
+          zIndex={100}
         />
 
         {/* Content on top of particles */}
-        <div className="relative z-20 flex justify-center items-center h-full translate-y-[-100px]">
+        <div className="relative z-20 flex justify-center items-center h-full translate-y-[-50px]">
           <DigitalClock />
         </div>
       </section>
