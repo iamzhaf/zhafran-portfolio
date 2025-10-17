@@ -94,12 +94,16 @@ export default function Portfolio() {
       {/* ====================================  BANNER ========================================= */}
 
       <section className="relative mx-auto max-w-full h-[35vh] px-2 py-[50px] md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat overflow-hidden">
+        
+        {/* Translucent overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        
         {/* Particles overlay */}
         <ParticlesBackground
           count={200}
           speed={0.05}
           connect={true}
-          color="rgba(0, 83, 192, 0.6)"
+          color="rgba(255, 5, 5, 0.6)"
           trails={true}
         />
 
