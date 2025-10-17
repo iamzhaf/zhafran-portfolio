@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, CodeXml } from "lucide-react";
 import "./App.css";
 import WorkTimeline from "./components/WorkTimeLine";
-
+import DigitalClock from "./components/DigitalClock";
 
 const years_experience = 8;
 
@@ -63,10 +63,10 @@ export default function Portfolio() {
 
   return (
     <section className="w-full">
-    <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100" : "min-h-screen bg-white text-neutral-900"}>
+    <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100" : "min-h-screen bg-neutral-50 text-neutral-900"}>
       {/* ==================================== NAVBAR ==================================== */}
-      <header className={`sticky top-0 z-100 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/70 dark:bg-neutral-900/60 border-b border-neutral-200/40 dark:border-neutral-800 ${dark ? "text-white" : "text-white"}`}>
-        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <header className={`sticky top-0 z-100 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/20 dark:bg-indigo-900/60 border-b border-neutral-200/40 dark:border-neutral-800 ${dark ? "text-white" : "text-white"}`}>
+        <div className="mx-auto max-w-full px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow">
               <CodeXml className="h-4 w-4 text-white" />
@@ -89,6 +89,14 @@ export default function Portfolio() {
           </button>
         </div>
       </header>
+
+      {/* ====================================  BANNER ========================================= */}
+
+      <section className="mx-auto max-w-full h-[30vh] px-2 py-50 md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat">
+        <div className="flex justify-center h-full translate-y-[-50px]">
+          <DigitalClock />
+        </div>
+      </section>
 
       {/* ==================================== HERO SECTION ==================================== */}
       <section className="mx-auto max-w-3/4 px-2 py-16 md:py-24">
