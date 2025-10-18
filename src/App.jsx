@@ -109,10 +109,10 @@ export default function Portfolio() {
         {/* Particles overlay */}
         <ParticlesBackground
           baseCount={isMobile ? 10 : 300}
-          speed={isMobile ? 0.05 : 0.7}
+          speed={isMobile ? 0.05 : 0.1}
           connect={true}
           color="#ffffff"
-          radius={isMobile ? 1.5 : 4}
+          radius={isMobile ? 1.5 : 8}
           linkColor="#ffffff"
           linkDistance={isMobile ? 100 : 200}
           linkOpacity={0.4}
