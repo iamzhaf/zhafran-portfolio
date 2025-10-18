@@ -59,8 +59,9 @@ const SKILLS = [
   "React", "JavaScript", "Power BI", "Tableau", "Docker",
   "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Machine Learning"];
 
-export default function Portfolio() {
-  const [dark, setDark] = useState(true);
+export default function Portfolio({
+  dark
+}) {
   const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -71,37 +72,11 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section className="w-full">
     <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100" : "min-h-screen bg-neutral-50 text-neutral-900"}>
       {/* ==================================== NAVBAR ==================================== */}
-      <header className={`sticky top-0 z-100 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/20 dark:bg-indigo-900/60 border-b border-neutral-200/40 dark:border-neutral-800 ${dark ? "text-white" : "text-white"}`}>
-        <div className="mx-auto max-w-full px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow">
-              <CodeXml className="h-4 w-4 text-white" />
-              {/* <img src="mz_portfolio.png" alt="MZ Portfolio" className="h-12 w-12" /> */}
-            </div>
-            {dark ? <span className="font-semibold">{PROFILE.banner_message}</span>: <span className="font-semibold text-black">{PROFILE.banner_message}</span>}
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm opacity-50 text-white z-150">
-            <a href="#about" className="hover:opacity-100">About</a>
-            <a href="#projects" className="hover:opacity-100">Projects</a>
-            <a href="#skills" className="hover:opacity-100">Skills</a>
-            <a href="#contact" className="hover:opacity-100">Contact</a>
-          </nav>
-          <button
-            onClick={() => setDark(!dark)}
-            className={`${dark ? "text-white" : "text-black"} text-xs rounded-xl px-3 py-1 border border-neutral-300 dark:border-neutral-700 hover:shadow`}
-            aria-label="Toggle theme"
-          >
-            {dark ? "Light" : "Dark"}
-          </button>
-        </div>
-      </header>
 
       {/* ====================================  BANNER ========================================= */}
-
-      <section className="relative mx-auto max-w-full h-[35vh] px-2 py-[50px] md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat overflow-hidden">
+      <section className="relative w-full h-[35vh] py-[50px] md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat overflow-hidden">
         
         {/* Translucent overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
@@ -114,7 +89,7 @@ export default function Portfolio() {
           color="#ffffff"
           radius={isMobile ? 1.5 : 8}
           linkColor="#ffffff"
-          linkDistance={isMobile ? 100 : 200}
+          linkDistance={isMobile ? 80 : 150}
           linkOpacity={0.4}
           lineWidth={isMobile ? 1.5 : 2.3}
           zIndex={100}
@@ -289,6 +264,5 @@ export default function Portfolio() {
         <p className="mt-6 text-xs opacity-60">© {new Date().getFullYear()} {PROFILE.name}. Built with React + Tailwind.</p>
       </section>
     </div>
-    </section>
   );
 }

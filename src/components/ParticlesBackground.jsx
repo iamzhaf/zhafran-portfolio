@@ -131,8 +131,8 @@ export default function ParticlesBackground({
         const yaw = yawRef.current || 0; // get the yaw angle
         const cosY = Math.cos(yaw); // get the cosine of the yaw angle
         const sinY = Math.sin(yaw); // get the sine of the yaw angle
-        const fov = 800; // tweak 300–800 to taste
-        const ZOOM = 1.5; // zoom level
+        const fov = 900; // tweak 300–800 to taste
+        const ZOOM = 1.2; // zoom level
 
         ctx.clearRect(0, 0, w, h); // clear the canvas
 
@@ -151,16 +151,28 @@ export default function ParticlesBackground({
             const pz = (p.z ?? 0);
 
             // rotate around Y axis (3D yaw)
-            const x3 = px * cosY - (pz ?? 0) * sinY;
-            const z3 = px * sinY + (pz ?? 0) * cosY;
+            const x3 = px * cosY + (pz ?? 0) * sinY;
+            const z3 = -px * sinY + (pz ?? 0) * cosY;
             const y3 = py;
 
+            // // rotate around X axis (3D pitch)
+            // const x3 = px;
+            // const z3 = pz * cosY - py * sinY;
+            // const y3 = pz * sinY + py * cosY;
+
+            // rotation matrix is defined as 
+            // [cos(angle), 0, sin(angle)]
+            // [0, 1, 0]
+            // [-sin(angle), 0, cos(angle)]
+            // reference: https://en.wikipedia.org/wiki/Rotation_matrix
+
             // perspective project
-            const scale = fov / (fov + z3);
-            const sx = cx + x3 * scale * ZOOM;
-            const sy = cy + y3 * scale * ZOOM;
+            const scale = fov / (fov + z3); // scale is the ratio of fov to the sum of fov and z3
+            const sx = cx + x3 * scale * ZOOM; // sx is the x coordinate of the projected point
+            const sy = cy + y3 * scale * ZOOM; // sy is the y coordinate of the projected point
 
             proj[i] = { sx, sy, scale, z3 };
+            
         }
 
         // 2) Draw links using projected coordinates
@@ -168,12 +180,12 @@ export default function ParticlesBackground({
         ctx.beginPath();
         for (let i = 0; i < parts.length; i++) {
             for (let j = i + 1; j < parts.length; j++) {
-            const dx = proj[i].sx - proj[j].sx;
-            const dy = proj[i].sy - proj[j].sy;
-            const d2 = dx * dx + dy * dy;
+            const dx = proj[i].sx - proj[j].sx; // the distance between x coordinates of x_1 and x_2
+            const dy = proj[i].sy - proj[j].sy; // the distance between y coordinates of y_1 and y_2
+            const d2 = dx * dx + dy * dy; // the square of the distance between the two points
 
             // screen-space link threshold
-            if (d2 < lineMax * lineMax) {
+            if (d2 < lineMax * lineMax) { // exclude links that are too far away from each other
                 const d = Math.sqrt(d2);
                 const a = 1 - d / lineMax;
 
@@ -183,7 +195,7 @@ export default function ParticlesBackground({
                 ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
 
                 // optional: scale line width with depth for nicer perspective
-                ctx.lineWidth = lineWidth * (0.6 + 0.4 * (proj[i].scale + proj[j].scale) * 0.5);
+                ctx.lineWidth = lineWidth * (0.6 + 0.4 * (proj[i].scale + proj[j].scale) * 0.5); // scale the line width based on the depth of the particles
 
                 ctx.moveTo(proj[i].sx, proj[i].sy);
                 ctx.lineTo(proj[j].sx, proj[j].sy);
