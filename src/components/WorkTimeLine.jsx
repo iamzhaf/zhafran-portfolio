@@ -9,7 +9,7 @@ const TIMELINE = [
   { id: 4, label: "Feb 2023 - Feb 2024", year: "2023", title: "Data Scientist", desc: "Maybank, Singapore" },
   { id: 5, label: "Mar 2020 - Mar 2023", year: "2023", title: "Data Scientist II", desc: "Validus Capital, Singapore" },
   { id: 6, label: "Feb 2019 - Mar 2020", year: "2020", title: "Associate Consultant/Data Analyst", desc: "KPMG, Singapore" },
-  { id: 7, label: "Sep 2018 - Oct 2018", year: "2018", title: "Data Analyst", desc: "Dun & Bradstreet" },
+  { id: 7, label: "Sep 2017 - Oct 2018", year: "2018", title: "Data Analyst", desc: "Dun & Bradstreet" },
 ];
 
 export default function WorkTimeline({ dark_mode }) {
