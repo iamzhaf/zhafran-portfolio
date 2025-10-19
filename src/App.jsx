@@ -39,7 +39,7 @@ const PROJECTS = [
     url: "https://github.com/iamzhaf",
   },
     {
-    title: "Geoology & Site Investigation Dashboard",
+    title: "Geology & Site Investigation Dashboard",
     description:
       "Pandas + Streamlit + Plotly to transform geology and site investigation data efficiently into actionable soil, and geospatial insights and solutions.",
     tech: ["Python", "Streamlit", "Pandas", "Plotly", "QGIS","Folium"],
@@ -268,7 +268,7 @@ export default function Portfolio({
             <Linkedin className="h-4 w-4" /> Connect
           </a>
         </div>
-        <p className="mt-6 text-xs opacity-60">© {new Date().getFullYear()} {PROFILE.name}.All rights reserved. Built with React + Tailwind.</p>
+        <p className="mt-6 text-xs opacity-60">© {new Date().getFullYear()} {PROFILE.name}. All rights reserved. Built with React + Tailwind.</p>
       </section>
     </div>
   );
