@@ -38,6 +38,13 @@ const PROJECTS = [
     tech: ["Python", "Dash", "PostgreSQL", "OpenAI"],
     url: "https://github.com/iamzhaf",
   },
+    {
+    title: "Geoology & Site Investigation Dashboard",
+    description:
+      "Pandas + Streamlit + Plotly to transform geology and site investigation data efficiently into actionable soil, and geospatial insights and solutions.",
+    tech: ["Python", "Streamlit", "Pandas", "Plotly", "QGIS","Folium"],
+    url: "https://github.com/iamzhaf",
+  },
   {
     title: "SmartOps — Manpower Roster Engine",
     description:
@@ -86,11 +93,11 @@ export default function Portfolio({
           baseCount={isMobile ? 10 : 300}
           speed={isMobile ? 0.05 : 0.1}
           connect={true}
-          color="#ffffff"
-          radius={isMobile ? 1.5 : 8}
-          linkColor="#ffffff"
+          color="rgba(255, 255, 255, 0.7)"
+          radius={isMobile ? 1.5 : 10}
+          linkColor="rgba(255, 255, 255,0.7)"
           linkDistance={isMobile ? 80 : 150}
-          linkOpacity={0.4}
+          linkOpacity={1}
           lineWidth={isMobile ? 1.5 : 2.3}
           zIndex={100}
         />
@@ -261,7 +268,7 @@ export default function Portfolio({
             <Linkedin className="h-4 w-4" /> Connect
           </a>
         </div>
-        <p className="mt-6 text-xs opacity-60">© {new Date().getFullYear()} {PROFILE.name}. Built with React + Tailwind.</p>
+        <p className="mt-6 text-xs opacity-60">© {new Date().getFullYear()} {PROFILE.name}.All rights reserved. Built with React + Tailwind.</p>
       </section>
     </div>
   );
