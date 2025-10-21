@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/navbar.jsx";
 import { createRoot } from "react-dom/client";
 import Portfolio from "./App.jsx";
-// import Writeups from "./Writeups.jsx";
+import BlogList from "./components/BlogList.jsx";
+import BlogPost from "./components/BlogPost.jsx";
 
 const banner_message = "Welcome to Zhafran's Portfolio";
 
@@ -25,7 +26,8 @@ function Layout() {
       <Navbar dark={dark} setDark={setDark} banner={banner_message} isMobile={isMobile ? "mobile" : "desktop"} />
       <Routes>
         <Route path="/" element={<Portfolio dark={dark} />} />
-        {/* <Route path="/writeups" element={<Writeups />} /> */}
+        <Route path="/writeups" element={<BlogList dark={dark}/>} />
+        <Route path="/writeups/:id" element={<BlogPost dark={dark}/>} />
       </Routes>
     </div>
   );

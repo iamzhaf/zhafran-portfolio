@@ -1,6 +1,6 @@
 // Navbar.jsx
 import { Link } from "react-router-dom";
-import { CodeXml, Menu, X } from "lucide-react";
+import { CodeXml, Menu, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 // ❌ remove: import "./App.css";
 
@@ -40,15 +40,14 @@ export default function Navbar({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setDark(!dark)}
-            className="text-xs rounded-xl px-3 py-1 border border-neutral-300 dark:border-neutral-700 hover:shadow"
+            className="text-xs rounded-xl px-3 py-1 border border-neutral-300 dark:border-neutral-700 hover:bg-indigo-50 dark:hover:bg-indigo-900"
             aria-label="Toggle theme"
           >
-            {dark ? "Light" : "Dark"}
+            {dark ?  <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
           </button>
-
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden p-2 rounded-lg border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700"
+            className="md:hidden p-2 rounded-lg border border-transparent hover:shadow"
             onClick={() => setOpen(v => !v)}
             aria-expanded={open}
             aria-controls="mobile-nav"
