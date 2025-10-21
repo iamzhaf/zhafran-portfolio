@@ -25,8 +25,8 @@ export default function DigitalClock(
     useEffect(() => {
         const timer = setInterval(() => {
             setTime(new Date());
-        }, 1000);
-        return () => clearInterval(timer);
+        }, 1000); // Update time every second
+        return () => clearInterval(timer); // Clear interval on unmount
     }, []);
 
     return (

@@ -62,9 +62,9 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  "Python", "SQL", "PostgreSQL" ,"Pandas", "NumPy", "TensorFlow", "Deep Learning", "Statistical Modelling", "Scikit‑learn", "PySpark", "Flask",
-  "React", "JavaScript", "Power BI", "Tableau", "Docker",
-  "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Machine Learning"];
+  "Python", "SQL", "PostgreSQL" ,"Pandas", "NumPy", "TensorFlow", "Machine Learning" ,"Deep Learning", "Statistical Modelling", "Scikit‑learn", "PySpark", "Flask",
+  "React", "JavaScript", "Power BI", "Tableau", "Docker", "Data Visualisation" ,
+  "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Banking & Finance","Financial Risk Management", "Credit Risk Management"];
 
 export default function Portfolio({
   dark
