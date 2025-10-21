@@ -150,9 +150,9 @@ export default function ParticlesBackground({
             const py = p.y - cy;
             const pz = (p.z ?? 0);
 
-            // rotate around Y axis (3D yaw)
-            const x3 = px * cosY + (pz ?? 0) * sinY;
-            const z3 = -px * sinY + (pz ?? 0) * cosY;
+            // rotate around Y axis (3D yaw) 
+            const x3 = px * cosY - (pz ?? 0) * sinY;
+            const z3 = px * sinY + (pz ?? 0) * cosY;
             const y3 = py;
 
             // // rotate around X axis (3D pitch)
@@ -160,7 +160,7 @@ export default function ParticlesBackground({
             // const z3 = pz * cosY - py * sinY;
             // const y3 = pz * sinY + py * cosY;
 
-            // rotation matrix is defined as 
+            // rotation matrix around Y axis is defined as 
             // [cos(angle), 0, sin(angle)]
             // [0, 1, 0]
             // [-sin(angle), 0, cos(angle)]

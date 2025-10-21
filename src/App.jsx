@@ -79,7 +79,7 @@ export default function Portfolio({
   }, []);
 
   return (
-    <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100" : "min-h-screen bg-neutral-50 text-neutral-900"}>
+    <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100 translate-y-[50px]" : "min-h-screen bg-neutral-50 text-neutral-900 translate-y-[50px]"}>
       {/* ==================================== NAVBAR ==================================== */}
 
       {/* ====================================  BANNER ========================================= */}
