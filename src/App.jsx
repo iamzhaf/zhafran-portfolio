@@ -14,12 +14,12 @@ const PROFILE = {
   base_location: "Singapore",
   years_experience: 8,
   header_blurb:
-    "I am driven by purpose. I transform business problems into data-driven human-centric solutions end‑to‑end — from data collection to statistical analysis to ML/AI models to dashboard/data visualization apps.",
+    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions end‑to‑end — from data collection to statistical analysis to ML/AI models to dashboards/data visualization apps.",
   about_blurb: {
     first_para: 
-    "I’m an ex-Police Officer and an economics graduate turned Data Analyst and ML/AI Builder.",
+    "I’m an ex-Police Officer with the Singapore Police Force and an economics graduate turned Data Analyst and ML/AI Builder.",
     second_para: "I graduated from the University of London with Honours in Bachelor of Science in Economics and Finance. I also have a Diploma in Engineering Informatics from Nayang Polytechnic, Singapore",
-    third_para: `Over the past ${years_experience} years, I have worked in Banking, FinTech, Consulting and Credit Risk Management, helping businesses and teams streamline processes, and transform data into actionable insights and solutions.`,
+    third_para: `Over the past ${years_experience} years, I have worked in Banking, FinTech, Consulting and Credit Risk Management, helping businesses and teams streamline processes, enhancing productivity and transform data into actionable insights and building human-centric solutions.`,
     last_para:  
     "Outside of work, I do photography and bouldering. I also enjoy tinkering with machine learning models, AI applications and web development projects.",
     },
@@ -64,14 +64,15 @@ const PROJECTS = [
 const SKILLS = [
   "Python", "SQL", "PostgreSQL" ,"Pandas", "NumPy", "TensorFlow", "Machine Learning" ,"Deep Learning", "Statistical Modelling", "Scikit‑learn", "PySpark", "Flask",
   "React", "JavaScript", "Power BI", "Tableau", "Docker", "Data Visualisation" ,
-  "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Banking & Finance","Financial Risk Management", "Credit Risk Management"];
+  "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Banking & Finance","Financial Risk Management", "Credit Risk Management"
+];
 
 export default function Portfolio({
   dark
 }) {
   const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize(); // check if there is a resize event immediately
     window.addEventListener("resize", handleResize);
@@ -116,13 +117,13 @@ export default function Portfolio({
       <section className="mx-auto max-w-3/4 px-2 py-16 md:py-24">
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-5/8 w-full">
-            <p className={dark ? "typewriter text-xl md:text-4xl text-center text-indigo-600" : "typewriter text-xl md:text-4xl text-center text-indigo-800"}>
-              Hello, I'm <span className="font-bold text-xl md:text-5xl">{PROFILE.name}.</span>
+            <p className={dark ? "typewriter text-lg md:text-4xl text-center text-indigo-600" : "typewriter text-lg md:text-4xl text-center text-indigo-800"}>
+              Hello, I'm <span className="font-bold text-2xl md:text-5xl">{PROFILE.name}.</span>
             </p>
-            <h1 className={dark ? "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-300" : "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-700"}>
+            <h1 className={dark ? "mt-5 text-xl md:text-4xl leading-tight font-semibold text-gray-300" : "mt-5 text-xl md:text-3xl leading-tight font-semibold text-gray-700"}>
               {PROFILE.header_role}
             </h1>
-            <p className="mt-4 text-base md:text-lg opacity-80">
+            <p className="mt-4 text-base md:text-xl opacity-80">
               {PROFILE.header_blurb}
             </p>
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
@@ -184,23 +185,23 @@ export default function Portfolio({
         <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">About Me</h2>
 
         <div className="flex flex-col gap-6 justify-center items-center text-center">
-          <div className="max-w-3xl">
-            <p className="mt-3 opacity-90 text-md md:text-lg">
+          <div className="max-w-xl">
+            <p className="mt-3 opacity-90 text-xl md:text-lg">
               {PROFILE.about_blurb.first_para}
             </p>
           </div>
           <div className="max-w-3xl">
-            <p className="mt-3 opacity-90 text-md md:text-lg">
+            <p className="mt-3 opacity-90 text-xl md:text-lg">
               {PROFILE.about_blurb.second_para}
             </p>
           </div>
           <div className="max-w-3xl">
-            <p className="mt-3 opacity-90 text-md md:text-lg">
+            <p className="mt-3 opacity-90 text-xl md:text-lg">
               {PROFILE.about_blurb.third_para}
             </p>
           </div>
           <div className="max-w-3xl">
-            <p className="mt-3 opacity-90 text-md md:text-lg">
+            <p className="mt-3 opacity-90 text-xl md:text-lg">
               {PROFILE.about_blurb.last_para}
             </p>
           </div>
