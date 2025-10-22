@@ -14,12 +14,12 @@ const PROFILE = {
   base_location: "Singapore",
   years_experience: 8,
   header_blurb:
-    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions end‑to‑end — from data collection to statistical analysis to ML/AI models to dashboards/data visualization apps.",
+    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions end‑to‑end — from data extraction and processing to exploration and statistical analysis to ML/AI models to dashboards/data visualization apps.",
   about_blurb: {
     first_para: 
     "I’m an ex-Police Officer with the Singapore Police Force and an economics graduate turned Data Analyst and ML/AI Builder.",
     second_para: "I graduated from the University of London with Honours in Bachelor of Science in Economics and Finance. I also have a Diploma in Engineering Informatics from Nayang Polytechnic, Singapore",
-    third_para: `Over the past ${years_experience} years, I have worked in Banking, FinTech, Consulting and Credit Risk Management, helping businesses and teams streamline processes, enhancing productivity and transform data into actionable insights and building human-centric solutions.`,
+    third_para: `Over the past ${years_experience} years, I have worked in Banking, FinTech, Consulting and Credit Risk Management, helping businesses and teams streamline processes, enhance productivity and transform data into actionable insights and building human-centric solutions.`,
     last_para:  
     "Outside of work, I do photography and bouldering. I also enjoy tinkering with machine learning models, AI applications and web development projects.",
     },
