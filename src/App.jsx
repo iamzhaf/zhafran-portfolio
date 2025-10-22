@@ -31,6 +31,13 @@ const PROFILE = {
 };
 
 const PROJECTS = [
+    {
+    title: "Portfolio Credit Risk Management Dashboard",
+    description:
+      "Build with Microsoft Power BI empowering bank's portfolio risk management and product teams with insights on portfolio exposures, credit risk metrics, and early warning signals.",
+    tech: ["Power BI", "Python", "SAS", "SQL"],
+    url: "https://github.com/iamzhaf",
+  },
   {
     title: "Finwise — Budget & Cash Flow App",
     description:
@@ -147,7 +154,7 @@ export default function Portfolio({
             <div className="relative rounded-3xl p-1 bg-gradient-to-br from-indigo-500 via-violet-600 to-fuchsia-500 shadow-lg">
               <div className={dark ? "rounded-3xl p-6 md:p-10 bg-neutral-900 text-white [box-shadow:0_0_0_1px_rgba(168,85,247,0.3),0_0_30px_5px_rgba(168,85,247,0.15)]" : "rounded-3xl p-6 md:p-10 bg-white text-gray-800"}>
                 <div className="grid grid-cols-2 gap-4 md:gap-6">
-                  {PROJECTS.slice(0, 4).map((p, i) => (
+                  {PROJECTS.slice(0, 2).map((p, i) => (
                     <article key={i} className={`rounded-2xl border p-4 hover:shadow-md transition ${
                       dark ? 'border-neutral-800' : 'border-neutral-200 bg-white'
                     }`}>
@@ -221,7 +228,7 @@ export default function Portfolio({
           <h2 className="text-2xl md:text-3xl font-semibold">Projects</h2>
           <a href="https://github.com/your-username?tab=repositories" target="_blank" className="text-sm opacity-80 hover:opacity-100">All repos →</a>
         </div>
-        <div className="mt-6 grid md:grid-cols-3 gap-6">
+        <div className="mt-6 grid md:grid-cols-3 gap-7">
           {PROJECTS.map((p, i) => (
             <article key={i} className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-md transition flex flex-col">
               <h3 className="font-semibold text-lg">{p.title}</h3>
