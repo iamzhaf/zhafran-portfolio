@@ -37,7 +37,7 @@ export default function WorkTimeline({ dark_mode }) {
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
       <div className="mb-4 flex flex-col items-center justify-between justify-center">
-        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">Career Timeline</h2>
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">Career Journey</h2>
         <div className="flex gap-2">
           <button
             onClick={() => scrollByAmount(-1)}

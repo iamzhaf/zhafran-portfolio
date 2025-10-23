@@ -14,7 +14,7 @@ const PROFILE = {
   base_location: "Singapore",
   years_experience: 8,
   header_blurb:
-    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions end‑to‑end — from data extraction and processing to exploration and statistical analysis to ML/AI models to dashboards/data visualization apps.",
+    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions end‑to‑end — from data preparation and processing to exploration and statistical analysis to ML/AI modelling to dashboards/data visualization apps.",
   about_blurb: {
     first_para: 
     "I’m an ex-Police Officer with the Singapore Police Force and an economics graduate turned Data Analyst and ML/AI Builder.",
@@ -48,15 +48,15 @@ const PROJECTS = [
     {
     title: "Geology & Site Investigation Dashboard",
     description:
-      "Pandas + Streamlit + Plotly to transform geology and site investigation data efficiently into actionable soil, and geospatial insights and solutions.",
+      "Pandas + Streamlit + Plotly to transform site investigation and geo-information excel data efficiently into actionable soil, and geospatial insights for build/civil engineers.",
     tech: ["Python", "Streamlit", "Pandas", "Plotly", "QGIS","Folium"],
     url: "https://github.com/iamzhaf",
   },
   {
     title: "SmartOps — Manpower Roster Engine",
     description:
-      "Flask backend + React front‑end using Google Sheets as a low‑cost DB. Rule‑based planning with export to Excel/PDF.",
-    tech: ["Flask", "React", "gspread", "Google Cloud"],
+      "Flask backend + React front‑end using Google Sheets as a low‑cost database that generates automatic roster planning with a click of a button and allows export to Excel.",
+    tech: ["Python", "Flask", "React", "gspread", "Google Cloud"],
     url: "https://your-demo-or-",
   },
   {
@@ -88,7 +88,6 @@ export default function Portfolio({
 
   return (
     <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100 translate-y-[50px]" : "min-h-screen bg-neutral-50 text-neutral-900 translate-y-[50px]"}>
-      {/* ==================================== NAVBAR ==================================== */}
 
       {/* ====================================  BANNER ========================================= */}
       <section className="relative w-full h-[35vh] py-[50px] md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat overflow-hidden">
@@ -111,7 +110,7 @@ export default function Portfolio({
         />
 
         {/* Content on top of particles */}
-        <div className="relative z-20 flex justify-center items-center h-full translate-y-[-50px]">
+        <div className="relative z-100 flex justify-center items-center h-full translate-y-[-50px]">
           <div className="flex flex-col items-center gap-2">
             <p className="text-1xl font-semibold font-mono text-gray-300">Current Time</p>
             <DigitalClock isMobileStatus={isMobile ? "mobile" : "desktop"} />
