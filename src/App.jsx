@@ -33,7 +33,7 @@ const PROFILE = {
 
 const PROJECTS = [
     {
-    title: "Portfolio Credit Risk Management Dashboard",
+    title: "Consumer Banking Portfolio Risk Management Dashboard",
     description:
       "Build with Microsoft Power BI empowering bank's portfolio risk management and product teams with insights on portfolio exposures, credit risk metrics, and early warning signals.",
     tech: ["Power BI", "Python", "SAS", "SQL"],
@@ -75,17 +75,40 @@ const SKILLS = [
   "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Banking & Finance","Financial Risk Management", "Credit Risk Management"
 ];
 
+  const items = [
+    { x: 10,  label: "SMARTOps" },
+    { x: 35,  label: "AGS Streamlit" },
+    { x: 65,  label: "Finwise MVP" },
+    { x: 90,  label: "RAG" },
+  ];
+
 export default function Portfolio({
   dark
 }) {
+  // defined state to check if mobile or desktop based on browser's window width
   const [isMobile, setIsMobile] = useState(false);
+  // defined state to store mouse position
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // use useEffect to check if mobile or desktop based on browser's window width
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize(); // check if there is a resize event immediately
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize); // unmount or remove event listener
   }, []);
+
+  const handleMouseMove = (e) => {
+
+    // get the coordnates of the mouse position relative to the svg elementi
+    const svg = e.currentTarget;
+    const svgRect = svg.getBoundingClientRect();
+    console.log(svgRect)
+    const svgX = e.clientX - svgRect.left; // mouse position relative to the svg element
+    const svgY = e.clientY - svgRect.top; // mouse position relative to the svg element
+
+    setMousePosition({ x: svgX, y: svgY });
+  };
 
   return (
     <div className={dark ? "min-h-screen bg-neutral-950 text-neutral-100 translate-y-[50px]" : "min-h-screen bg-neutral-50 text-neutral-900 translate-y-[50px]"}>
@@ -118,6 +141,19 @@ export default function Portfolio({
           </div>
         </div>
       </section>
+
+      {/* <section className="mx-auto max-w-full px-2 py-50 md:py-24">
+      <div className="flex justify-center items-center translate-y-[100]">
+        <svg width="400" height="400" onMouseMove={handleMouseMove} className="border border-black">
+          <circle cx={400/2} cy={400/2} r="10" stroke="blue" stroke-width="3" fill="yellow" />
+          <circle cx={0} cy={0} r="10" stroke="blue" stroke-width="3" fill="yellow" />
+          <circle cx={400} cy={0} r="10" stroke="blue" stroke-width="3" fill="yellow" />
+          <circle cx={400} cy={400} r="10" stroke="blue" stroke-width="3" fill="yellow" />
+          <circle cx={0} cy={400} r="10" stroke="blue" stroke-width="3" fill="yellow" />
+          <circle cx={mousePosition.x} cy={mousePosition.y} r="10" stroke="black" stroke-width="3" fill="black" />
+        </svg>
+      </div>
+      </section> */}
 
 
       {/* ==================================== HERO SECTION ==================================== */}
