@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, CodeXml } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, ExternalLink, MapPin, CodeXml, FileText } from "lucide-react";
 import "./App.css";
 import WorkTimeline from "./components/WorkTimeLine";
 import DigitalClock from "./components/DigitalClock";
@@ -27,6 +27,7 @@ const PROFILE = {
     github: "https://github.com/iamzhaf",
     linkedin: "https://www.linkedin.com/in/mdzhafranbb",
     email: "mailto:muhd.zhafranb@gmail.com",
+    resume: "https://drive.google.com/file/d/1cGw-5yqJi35VIuCtxBCrNhheQi0tnuev/view?usp=sharing"
   },
 };
 
@@ -139,8 +140,8 @@ export default function Portfolio({
               <a href={PROFILE.links.linkedin} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 white:border-neutral-700 hover:bg-indigo-400">
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
-              <a href={PROFILE.links.email} className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 white:border-neutral-700 hover:bg-indigo-400">
-                <Mail className="h-4 w-4" /> Email
+              <a href={PROFILE.links.resume} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 white:border-neutral-700 hover:bg-indigo-400">
+                <FileText className="h-4 w-4" /> Resume
               </a>
             </div>
             <div className="mt-4 flex items-center gap-2 opacity-100 text-sm justify-center">
@@ -273,6 +274,9 @@ export default function Portfolio({
           </a>
           <a href={PROFILE.links.linkedin} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 dark:border-neutral-700 hover:shadow">
             <Linkedin className="h-4 w-4" /> Connect
+          </a>
+          <a href={PROFILE.links.resume} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 dark:border-neutral-700 hover:shadow">
+            <FileText className="h-4 w-4" /> Resume
           </a>
         </div>
         <p className="mt-6 text-xs opacity-60">© {new Date().getFullYear()} {PROFILE.name}. All rights reserved. Built with React + Tailwind.</p>
