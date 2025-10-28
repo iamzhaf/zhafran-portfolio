@@ -39,6 +39,13 @@ const PROJECTS = [
     tech: ["Power BI", "Python", "SAS", "SQL"],
     url: "https://github.com/iamzhaf",
   },
+    {
+    title: "Image Classification with Transfer Learning using MobileNetV2",
+    description:
+      "Designed and trained MobileNetV2 model for image classification using TensorFlow/Keras to classify if an image is Changi Airport Jewel or not.The training was done on a small dataset with an accuracy rate of ~95%.",
+    tech: ["Python", "TensorFlow", "Keras", "MobileNetV2", "Transfer Learning", "Computer Vision"],
+    url: "https://github.com/iamzhaf",
+  },
   {
     title: "Finwise — Budget & Cash Flow App",
     description:
