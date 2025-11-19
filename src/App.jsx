@@ -10,14 +10,14 @@ const years_experience = 8;
 const PROFILE = {
   banner_message: "Welcome to Zhafran's Portfolio",
   name: "Muhammad Zhafran",
-  header_role: "Data Analyst • ML/AI Builder • Data Enthusiast ",
+  header_role: "Senior Data Analyst • ML/AI Engineer • Full-Stack Builder ",
   base_location: "Singapore",
   years_experience: 8,
   header_blurb:
-    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions end‑to‑end — from data preparation and processing to exploration and statistical analysis to ML/AI modelling to dashboards/data visualization apps.",
+    "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions, encompassing data engineering, data exploration/analysis, data visualizations, machine learning and AI models, and cloud-native application deployment (Google Cloud Run/Docker).",
   about_blurb: {
     first_para: 
-    "I’m an ex-Police Officer with the Singapore Police Force and an economics graduate turned Data Analyst and ML/AI Builder.",
+    "I’m an ex-Police Officer with the Singapore Police Force and an economics graduate turned Data Analyst, Full-Stack Builder and ML/AI Engineer.",
     second_para: "I graduated from the University of London with Honours in Bachelor of Science in Economics and Finance. I also have a Diploma in Engineering Informatics from Nayang Polytechnic, Singapore",
     third_para: `Over the past ${years_experience} years, I have worked in Banking, FinTech, Consulting and Credit Risk Management, helping businesses and teams streamline processes, enhance productivity and transform data into actionable insights and building human-centric solutions.`,
     last_para:  
@@ -32,6 +32,21 @@ const PROFILE = {
 };
 
 const PROJECTS = [
+    {
+      title: "Hop-on SG: Full-Stack Cloud-Native Singapore Transit Tracker",
+      description:
+        "Architected and deployed end-to-end serverless application to solve real-world problem of inconsistent digital bus information panels. The app provides real-time arrivals by mobilizing data from the LTA API with an efficient, all secured and scaled on Google Cloud Run.",
+      tech: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Docker",
+        "Google Cloud Run",
+        "LTA API",
+        "Microservices"
+      ],
+      url: "https://hop-on-sg.app/",
+    },
     {
     title: "Consumer Banking Portfolio Risk Management Dashboard",
     description:
@@ -66,14 +81,7 @@ const PROJECTS = [
       "Flask backend + React front‑end using Google Sheets as a low‑cost database that generates automatic roster planning with a click of a button and allows export to Excel.",
     tech: ["Python", "Flask", "React", "gspread", "Google Cloud"],
     url: "https://your-demo-or-",
-  },
-  {
-    title: "Corporate Entities Insights Dashboard",
-    description:
-      "Plotly dashboards with entity search, filtering, and KPI drill‑downs.",
-    tech: ["Python", "Pandas", "Plotly"],
-    url: "https://github.com/iamzhaf",
-  },
+  }
 ];
 
 const SKILLS = [
