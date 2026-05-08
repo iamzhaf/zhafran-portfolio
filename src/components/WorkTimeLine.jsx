@@ -1,118 +1,136 @@
-import { useEffect, useRef } from "react";
-import { BiSolidRightArrow } from "react-icons/bi";
-import { BiSolidLeftArrow } from "react-icons/bi";
+import { Brain, Database, LineChart, Briefcase, ShieldCheck } from "lucide-react";
 
 const TIMELINE = [
-  { id: 1, label: "Jan 2026 - Present", year: "2026", title: "Lead Data Analyst", desc: "A*STAR Singapore" },
-  { id: 2, label: "Jun 2025 - Sep 2025", year: "2025", title: "Digital Transformation Consultant", desc: "TERS Consulting (Construction Company)" },
-  { id: 3, label: "Apr 2024 - Oct 2024", year: "2024", title: "Data Governance Analyst", desc: "DBS Bank, Singapore" },
-  { id: 4, label: "Feb 2024 - Dec 2024", year: "2024", title: "LIBOR Data Analyst, AVP", desc: "Standard Chartered Bank, Singapore" },
-  { id: 5, label: "Feb 2023 - Feb 2024", year: "2023", title: "Data Scientist", desc: "Maybank, Singapore" },
-  { id: 6, label: "Mar 2020 - Mar 2023", year: "2023", title: "Data Scientist II", desc: "Validus Capital, Singapore" },
-  { id: 7, label: "Feb 2019 - Mar 2020", year: "2020", title: "Associate Consultant/Data Analyst", desc: "KPMG, Singapore" },
-  { id: 8, label: "Sep 2017 - Oct 2018", year: "2018", title: "Data Analyst", desc: "Dun & Bradstreet" },
+  {
+    id: 1,
+    label: "Jan 2026 - Present",
+    year: "2026",
+    title: "Lead Data Analyst",
+    desc: "A*STAR Singapore",
+    icon: <Database className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-blue-500 to-indigo-600",
+  },
+  {
+    id: 2,
+    label: "Jun 2025 - Sep 2025",
+    year: "2025",
+    title: "Digital Transformation Consultant",
+    desc: "TERS Consulting (Construction Company)",
+    icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-amber-400 to-orange-500",
+  },
+  {
+    id: 3,
+    label: "Apr 2024 - Oct 2024",
+    year: "2024",
+    title: "Data Governance Analyst",
+    desc: "DBS Bank, Singapore",
+    icon: <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-emerald-400 to-teal-500",
+  },
+  {
+    id: 4,
+    label: "Feb 2024 - Dec 2024",
+    year: "2024",
+    title: "LIBOR Data Analyst, AVP",
+    desc: "Standard Chartered Bank, Singapore",
+    icon: <LineChart className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-blue-400 to-indigo-500",
+  },
+  {
+    id: 5,
+    label: "Feb 2023 - Feb 2024",
+    year: "2023",
+    title: "Data Scientist",
+    desc: "Maybank, Singapore",
+    icon: <Brain className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-fuchsia-500 to-purple-600",
+  },
+  {
+    id: 6,
+    label: "Mar 2020 - Mar 2023",
+    year: "2023",
+    title: "Data Scientist II",
+    desc: "Validus Capital, Singapore",
+    icon: <Brain className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-fuchsia-400 to-purple-500",
+  },
+  {
+    id: 7,
+    label: "Feb 2019 - Mar 2020",
+    year: "2020",
+    title: "Associate Consultant/Data Analyst",
+    desc: "KPMG, Singapore",
+    icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-amber-500 to-orange-600",
+  },
+  {
+    id: 8,
+    label: "Sep 2017 - Oct 2018",
+    year: "2018",
+    title: "Data Analyst",
+    desc: "Dun & Bradstreet",
+    icon: <LineChart className="w-5 h-5 md:w-6 md:h-6 text-white" />,
+    color: "from-blue-500 to-indigo-600",
+  },
 ];
 
 export default function WorkTimeline({ dark_mode }) {
-  const trackRef = useRef(null);
-
-
-  // Keyboard arrows to move the timeline when the track is focused
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const onKey = (e) => {
-      if (e.key === "ArrowRight") el.scrollBy({ left: el.clientWidth * 0.8, behavior: "smooth" });
-      if (e.key === "ArrowLeft") el.scrollBy({ left: -el.clientWidth * 0.8, behavior: "smooth" });
-    };
-    el.addEventListener("keydown", onKey);
-    return () => el.removeEventListener("keydown", onKey);
-  }, []);
-
-  const scrollByAmount = (dir) => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
-  };
-
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12">
-      <div className="mb-4 flex flex-col items-center justify-between justify-center">
-        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-6">Career Journey</h2>
-        <div className="flex gap-2">
-          <button
-            onClick={() => scrollByAmount(-1)}
-            className={`flex items-center justify-center rounded-full w-12 h-12 border ${dark_mode ? "bg-neutral-300 hover:bg-neutral-100 focus:outline-none focus:ring focus:ring-white/20  border-indigo-600" : "bg-gray-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-white/20 border-indigo-600"} `}
-            aria-label="Previous"
-          >
-            <BiSolidLeftArrow className="text-indigo-600 text-4xl" />
-          </button>
-          <button
-            onClick={() => scrollByAmount(1)}
-            className={`flex items-center justify-center rounded-full w-12 h-12 border ${dark_mode ? "bg-neutral-300 hover:bg-neutral-100 focus:outline-none focus:ring focus:ring-white/20  border-indigo-600" : "bg-gray-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-white/20 border-indigo-600"}`}
-            aria-label="Next"
-          >
-            <BiSolidRightArrow className="text-indigo-600 text-4xl" />
-          </button>
-        </div>
-      </div>
+    <div className="relative mx-auto max-w-4xl px-2 md:px-4 py-8 md:py-12">
+      {/* Central Vertical Line */}
+      <div className="absolute left-[35px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 via-fuchsia-500 to-indigo-500 md:-translate-x-1/2 opacity-30 rounded-full" />
 
-      {/* Track */}
-      <div
-        ref={trackRef}
-        tabIndex={0}
-        role="list"
-        aria-label="Timeline"
-        className="
-        relative min-h-[280px]
-        overflow-x-auto
-        snap-x snap-mandatory
-        focus:outline-none
-        group no-scrollbar
-    "
-      >
-        {/* Move the baseline INSIDE the scroll content and keep it at 50% */}
-        <ul className="relative flex gap-16 md:gap-20 pr-12 py-8 min-w-max w-full">
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-neutral-700/70 z-0" />
+      <div className="flex flex-col gap-10 md:gap-16 relative z-10">
+        {TIMELINE.map((item, index) => {
+          const isLeft = index % 2 === 0;
 
-          {TIMELINE.map((item) => (
-            <li
+          return (
+            <div
               key={item.id}
-              role="listitem"
-              aria-label={`${item.label}: ${item.title}`}
-              className="
-            snap-start shrink-0 relative z-10
-            grid grid-rows-[auto_65px_auto]
-            items-center justify-items-center
-            "
+              className={`flex flex-col md:flex-row items-start md:items-center w-full group ${
+                isLeft ? "md:flex-row-reverse" : ""
+              }`}
             >
-              {/* Top label */}
-              <div className={`mb-2 text-center font-mono tracking-wider ${dark_mode ? "text-white" : "text-black"} text-base md:text-lg`}>
-                {item.label}
-              </div>
-
-              {/* Middle row: dot is 48px tall, baseline passes through its center */}
-              <div className="row-start-2 row-end-3 grid place-items-start">
-                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-indigo-700 to-violet-400 ring-2 ring-neutral-600 shadow grid place-items-center translate-y-[30px]">
-                  <span className="text-xl">🚀</span>
+              {/* Timeline Card Container */}
+              <div className={`w-full md:w-[45%] ml-[70px] md:ml-0 flex flex-col transition-all duration-300 transform group-hover:-translate-y-1 ${isLeft ? "md:items-start" : "md:items-end"}`}>
+                <div
+                  className={`relative p-5 md:p-6 rounded-2xl border shadow-lg backdrop-blur-md transition-colors duration-300 w-full ${
+                    dark_mode
+                      ? "bg-neutral-900/80 border-neutral-700/50 group-hover:border-indigo-500/50"
+                      : "bg-white/90 border-neutral-200/50 group-hover:border-indigo-400/50"
+                  }`}
+                >
+                  <div className={`mb-3 inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold tracking-wider ${dark_mode ? "bg-neutral-800/80 text-indigo-300" : "bg-indigo-100/80 text-indigo-800"}`}>
+                    {item.label}
+                  </div>
+                  <h3 className={`text-lg md:text-xl font-bold ${dark_mode ? "text-white" : "text-gray-900"}`}>
+                    {item.title}
+                  </h3>
+                  <p className={`mt-2 text-sm font-medium ${dark_mode ? "text-neutral-400" : "text-neutral-600"}`}>
+                    {item.desc}
+                  </p>
                 </div>
               </div>
 
-              {/* Bottom card */}
-              <div className={`row-start-3 mt-5 w-74 rounded-xl p-4 shadow hover:border-neutral-700 translate-y-[35px] ${dark_mode ? "bg-neutral-900/70" : "bg-neutral-400/70"}`}>
-                <div className="text-sm font-semibold">{item.title}</div>
-                <p className={dark_mode ? "mt-1 font-medium text-sm text-neutral-300" : "mt-1 font-medium text-sm text-neutral-800"}>{item.desc}</p>
+              {/* Center Node / Icon */}
+              <div className="absolute left-[15px] md:static md:w-[10%] flex justify-center z-20 mt-4 md:mt-0">
+                <div
+                  className={`w-11 h-11 md:w-14 md:h-14 rounded-full flex items-center justify-center bg-gradient-to-br ${item.color} shadow-lg ring-4 ${
+                    dark_mode ? "ring-neutral-950" : "ring-neutral-50"
+                  } transform transition-transform duration-300 group-hover:scale-110`}
+                >
+                  {item.icon}
+                </div>
               </div>
-            </li>
-          ))}
 
-          {/* trailing spacer so last item isn’t clipped */}
-          <li aria-hidden className="shrink-0 w-6 md:w-12" />
-        </ul>
+              {/* Empty Space for the other side */}
+              <div className="hidden md:block w-[45%]" />
+            </div>
+          );
+        })}
       </div>
-
-      {/* Mobile hint */}
-      <p className="mt-3 text-xs text-neutral-400 md:hidden">Tip: swipe left/right or use the buttons.</p>
-    </section>
+    </div>
   );
 }
+
