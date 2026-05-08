@@ -4,6 +4,7 @@ import "./App.css";
 import WorkTimeline from "./components/WorkTimeLine";
 import DigitalClock from "./components/DigitalClock";
 import ParticlesBackground from "./components/ParticlesBackground";
+import SkillsNetwork3D from "./components/SkillsNetwork3D";
 
 const years_experience = 8;
 
@@ -297,14 +298,10 @@ export default function Portfolio({
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
-        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider">Skills</h2>
-        <div className="mt-4 flex flex-wrap gap-2 justify-center items-center max-w-5xl mx-auto">
-          {SKILLS.map((s, i) => (
-            <span key={i} className="text-md md:text-lg px-5 py-1 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white">
-              {s}
-            </span>
-          ))}
+      <section id="skills" className="mx-auto max-w-[85%] md:max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-8">Skills</h2>
+        <div className="mt-4 flex justify-center items-center max-w-5xl mx-auto w-full h-[500px]">
+           <SkillsNetwork3D dark_mode={dark} />
         </div>
       </section>
 
