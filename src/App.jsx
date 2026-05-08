@@ -10,20 +10,20 @@ const years_experience = 8;
 const PROFILE = {
   banner_message: "Welcome to Zhafran's Portfolio",
   name: "Muhammad Zhafran",
-  header_role: "Senior Data Analyst • ML/AI Engineer • Full-Stack Builder ",
+  header_role: "Lead Data Analyst • Full-Stack Developer • AI Engineer ",
   base_location: "Singapore",
   years_experience: 8,
   header_blurb:
     "I am driven by purpose and guided by values. I transform business problems into data-driven human-centric solutions, encompassing data engineering, data exploration/analysis, data visualizations, machine learning and AI models, and cloud-native application deployment (Google Cloud Run/Docker).",
   about_blurb: {
-    first_para: 
-    "I’m an ex-Police Officer with the Singapore Police Force and an economics graduate turned Data Analyst, Full-Stack Builder and ML/AI Engineer.",
+    first_para:
+      "I am a Lead Data Analyst and Full-Stack Developer with over 8 years of experience in the financial services industry.",
     second_para: "I graduated from the University of London with Honours in Bachelor of Science in Economics and Finance. I also have a Diploma in Engineering Informatics from Nayang Polytechnic, Singapore",
     third_para: `Over the past ${years_experience} years, I have worked in Banking, FinTech, Consulting and Credit Risk Management, helping businesses and teams streamline processes, enhance productivity and transform data into actionable insights and building human-centric solutions.`,
-    last_para:  
-    "Outside of work, I do photography and bouldering. I also enjoy tinkering with machine learning models, AI applications and web development projects.",
-    },
-    links: {
+    last_para:
+      "Outside of work, I do photography and bouldering. I also enjoy tinkering with machine learning models, AI applications and web development projects.",
+  },
+  links: {
     github: "https://github.com/iamzhaf",
     linkedin: "https://www.linkedin.com/in/mdzhafranbb",
     email: "mailto:muhd.zhafranb@gmail.com",
@@ -32,29 +32,29 @@ const PROFILE = {
 };
 
 const PROJECTS = [
-    {
-      title: "Hop-on SG: Full-Stack Cloud-Native Singapore Transit Tracker",
-      description:
-        "Architected and deployed end-to-end serverless application to solve real-world problem of inconsistent digital bus information panels. The app provides real-time arrivals by mobilizing data from the LTA API with an efficient, all secured and scaled on Google Cloud Run.",
-      tech: [
-        "React",
-        "Node.js",
-        "Express.js",
-        "Docker",
-        "Google Cloud Run",
-        "LTA API",
-        "Microservices"
-      ],
-      url: "https://hop-on-sg.app/",
-    },
-    {
+  {
+    title: "Hop-on SG: Full-Stack Cloud-Native Singapore Transit Tracker",
+    description:
+      "Architected and deployed end-to-end serverless application to solve real-world problem of inconsistent digital bus information panels. The app provides real-time arrivals by mobilizing data from the LTA API with an efficient, all secured and scaled on Google Cloud Run.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "Docker",
+      "Google Cloud Run",
+      "LTA API",
+      "Microservices"
+    ],
+    url: "https://hop-on-sg.app/",
+  },
+  {
     title: "Consumer Banking Portfolio Risk Management Dashboard",
     description:
       "Build with Microsoft Power BI empowering bank's portfolio risk management and product teams with insights on portfolio exposures, credit risk metrics, and early warning signals.",
-    tech: ["Power BI", "Python", "SAS", "SQL"],
+    tech: ["Power BI", "Python", "SAS", "SQL", "Data Modelling"],
     url: "https://github.com/iamzhaf",
   },
-    {
+  {
     title: "Image Classification with Transfer Learning using MobileNetV2",
     description:
       "Designed and trained MobileNetV2 model for image classification using TensorFlow/Keras to classify if an image is Changi Airport Jewel or not.The training was done on a small dataset with an accuracy rate of ~95%.",
@@ -68,11 +68,11 @@ const PROJECTS = [
     tech: ["Python", "Dash", "PostgreSQL", "OpenAI"],
     url: "https://github.com/iamzhaf",
   },
-    {
+  {
     title: "Geology & Site Investigation Dashboard",
     description:
       "Pandas + Streamlit + Plotly to transform site investigation and geo-information excel data efficiently into actionable soil, and geospatial insights for build/civil engineers.",
-    tech: ["Python", "Streamlit", "Pandas", "Plotly", "QGIS","Folium"],
+    tech: ["Python", "Streamlit", "Pandas", "Plotly", "QGIS", "Folium"],
     url: "https://github.com/iamzhaf",
   },
   {
@@ -85,17 +85,17 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  "Python", "SQL", "PostgreSQL" ,"Pandas", "NumPy", "TensorFlow", "Machine Learning" ,"Deep Learning", "Statistical Modelling", "Scikit‑learn", "PySpark", "Flask",
-  "React", "JavaScript", "Power BI", "Tableau", "Docker", "Data Visualisation" ,
-  "DuckDB", "GCP", "Data Governance" , "Probability Theory" , "Econometrics" , "Time Series Analysis", "Banking & Finance","Financial Risk Management", "Credit Risk Management"
+  "Python", "SQL", "PostgreSQL", "Pandas", "NumPy", "TensorFlow", "Machine Learning", "Deep Learning", "Statistical Modelling", "Scikit‑learn", "PySpark", "Flask",
+  "React", "JavaScript", "Power BI", "Tableau", "Docker", "Data Visualisation", "Data Modelling",
+  "DuckDB", "GCP", "Data Governance", "Probability Theory", "Econometrics", "Time Series Analysis", "Banking & Finance", "Financial Risk Management", "Credit Risk Management"
 ];
 
-  const items = [
-    { x: 10,  label: "SMARTOps" },
-    { x: 35,  label: "AGS Streamlit" },
-    { x: 65,  label: "Finwise MVP" },
-    { x: 90,  label: "RAG" },
-  ];
+const items = [
+  { x: 10, label: "SMARTOps" },
+  { x: 35, label: "AGS Streamlit" },
+  { x: 65, label: "Finwise MVP" },
+  { x: 90, label: "RAG" },
+];
 
 export default function Portfolio({
   dark
@@ -115,7 +115,7 @@ export default function Portfolio({
 
   const handleMouseMove = (e) => {
 
-    // get the coordnates of the mouse position relative to the svg elementi
+    // get the coordinates of the mouse position relative to the svg element
     const svg = e.currentTarget;
     const svgRect = svg.getBoundingClientRect();
     console.log(svgRect)
@@ -130,10 +130,10 @@ export default function Portfolio({
 
       {/* ====================================  BANNER ========================================= */}
       <section className="relative w-full h-[35vh] py-[50px] md:py-24 bg-[url('/banner.JPG')] bg-cover bg-center bg-no-repeat overflow-hidden">
-        
+
         {/* Translucent overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
-        
+
         {/* Particles overlay */}
         <ParticlesBackground
           baseCount={isMobile ? 10 : 300}
@@ -197,25 +197,23 @@ export default function Portfolio({
             </div>
             <div className="mt-4 flex items-center gap-2 opacity-100 text-sm justify-center">
               <p className="flex items-baseline gap-2"> I'm located in <MapPin className="h-5 w-5" />
-                  <span className={dark ? "text-2xl text-white" : "text-2xl text-black-900"}> {PROFILE.base_location}</span>
+                <span className={dark ? "text-2xl text-white" : "text-2xl text-black-900"}> {PROFILE.base_location}</span>
               </p>
-            </div>  
+            </div>
           </div>
           <div className="md:w-3/8 max-w-screen-lg mx-auto">
             <div className="relative rounded-3xl p-1 bg-gradient-to-br from-indigo-500 via-violet-600 to-fuchsia-500 shadow-lg">
               <div className={dark ? "rounded-3xl p-6 md:p-10 bg-neutral-900 text-white [box-shadow:0_0_0_1px_rgba(168,85,247,0.3),0_0_30px_5px_rgba(168,85,247,0.15)]" : "rounded-3xl p-6 md:p-10 bg-white text-gray-800"}>
                 <div className="grid grid-cols-2 gap-4 md:gap-6">
                   {PROJECTS.slice(0, 2).map((p, i) => (
-                    <article key={i} className={`rounded-2xl border p-4 hover:shadow-md transition ${
-                      dark ? 'border-neutral-800' : 'border-neutral-200 bg-white'
-                    }`}>
+                    <article key={i} className={`rounded-2xl border p-4 hover:shadow-md transition ${dark ? 'border-neutral-800' : 'border-neutral-200 bg-white'
+                      }`}>
                       <h3 className="font-semibold text-sm md:text-base">{p.title}</h3>
                       <p className="mt-1 text-xs md:text-sm text-opacity-80 line-clamp-3">{p.description}</p>
                       <div className="mt-2 flex flex-wrap gap-1">
                         {p.tech.map((t, j) => (
-                          <span key={j} className={`text-[10px] md:text-xs px-2 py-0.5 rounded-full border ${
-                            dark ? 'border-neutral-700 bg-neutral-800/50 text-white' : 'border-neutral-300 bg-gray-50 text-gray-800'
-                          }`}>
+                          <span key={j} className={`text-[10px] md:text-xs px-2 py-0.5 rounded-full border ${dark ? 'border-neutral-700 bg-neutral-800/50 text-white' : 'border-neutral-300 bg-gray-50 text-gray-800'
+                            }`}>
                             {t}
                           </span>
                         ))}
@@ -223,9 +221,8 @@ export default function Portfolio({
                     </article>
                   ))}
                 </div>
-                <a href="#projects" className={`mt-4 md:mt-6 inline-flex items-center gap-2 text-sm font-medium ${
-                  dark ? 'text-white' : 'text-gray-800'
-                }`}>
+                <a href="#projects" className={`mt-4 md:mt-6 inline-flex items-center gap-2 text-sm font-medium ${dark ? 'text-white' : 'text-gray-800'
+                  }`}>
                   See all projects <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -264,9 +261,9 @@ export default function Portfolio({
             </p>
           </div>
         </div>
-        
 
-        {/* WORK TIMELINE */} 
+
+        {/* WORK TIMELINE */}
         <div className="mt-16">
           <WorkTimeline dark_mode={dark} />
         </div>
@@ -315,9 +312,9 @@ export default function Portfolio({
       <section id="contact" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
         <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center">Get in touch</h2>
         <div className="flex flex-wrap gap-2 justify-center items-center">
-        <p className="mt-3 opacity-80 max-w-3xl">
-          Open to full‑time roles and collaborations. The fastest way to reach me is via email or LinkedIn.
-        </p>
+          <p className="mt-3 opacity-80 max-w-3xl">
+            Open to full‑time roles and collaborations. The fastest way to reach me is via email or LinkedIn.
+          </p>
         </div>
         <div className="mt-6 flex flex-wrap gap-3 justify-center items-center">
           <a href={PROFILE.links.email} className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-neutral-300 dark:border-neutral-700 hover:shadow">
