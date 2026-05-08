@@ -10,7 +10,7 @@ import BlogPost from "./components/BlogPost.jsx";
 const banner_message = "Welcome to Zhafran's Portfolio";
 
 function Layout() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
 
@@ -26,8 +26,8 @@ function Layout() {
       <Navbar dark={dark} setDark={setDark} banner={banner_message} isMobile={isMobile ? "mobile" : "desktop"} />
       <Routes>
         <Route path="/" element={<Portfolio dark={dark} />} />
-        <Route path="/writeups" element={<BlogList dark={dark}/>} />
-        <Route path="/writeups/:id" element={<BlogPost dark={dark}/>} />
+        <Route path="/writeups" element={<BlogList dark={dark} />} />
+        <Route path="/writeups/:id" element={<BlogPost dark={dark} />} />
       </Routes>
     </div>
   );
