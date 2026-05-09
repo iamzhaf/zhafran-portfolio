@@ -5,6 +5,7 @@ import WorkTimeline from "./components/WorkTimeLine";
 import DigitalClock from "./components/DigitalClock";
 import ParticlesBackground from "./components/ParticlesBackground";
 import SkillsNetwork3D from "./components/SkillsNetwork3D";
+import SkillsList from "./components/SkillsList";
 
 const years_experience = 8;
 
@@ -271,10 +272,23 @@ export default function Portfolio({
 
       </section>
 
+
+      {/* SKILLS */}
+      <section id="skills" className="mx-auto max-w-[85%] md:max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
+        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-8">Skills Profile</h2>
+        <div className="mt-4 flex justify-center items-center max-w-5xl mx-auto w-full h-full">
+          <SkillsNetwork3D dark_mode={dark} />
+        </div>
+        
+        {/* Added readable list of skills */}
+        <SkillsList dark_mode={dark} />
+      </section>
+
+
       {/* PROJECTS */}
       <section id="projects" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-semibold">Projects</h2>
+          <h2 className="text-2xl md:text-5xl font-mono tracking-wider font-semibold">Projects</h2>
           <a href="https://github.com/your-username?tab=repositories" target="_blank" className="text-sm opacity-80 hover:opacity-100">All repos →</a>
         </div>
         <div className="mt-6 grid md:grid-cols-3 gap-7">
@@ -297,20 +311,13 @@ export default function Portfolio({
         </div>
       </section>
 
-      {/* SKILLS */}
-      <section id="skills" className="mx-auto max-w-[85%] md:max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
-        <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center mb-8">Skills</h2>
-        <div className="mt-4 flex justify-center items-center max-w-5xl mx-auto w-full h-[500px]">
-           <SkillsNetwork3D dark_mode={dark} />
-        </div>
-      </section>
 
       {/* CONTACT */}
       <section id="contact" className="mx-auto max-w-[75%] px-2 py-16 md:py-24 border-t border-neutral-200/60 dark:border-neutral-800/60">
         <h2 className="text-2xl md:text-5xl font-semibold font-mono tracking-wider text-center">Get in touch</h2>
         <div className="flex flex-wrap gap-2 justify-center items-center">
           <p className="mt-3 opacity-80 max-w-3xl">
-            Open to full‑time roles and collaborations. The fastest way to reach me is via email or LinkedIn.
+            Open to collaborations and networking. Do reach out via email or connect with me on <a href="" target="_blank">LinkedIn!</a>
           </p>
         </div>
         <div className="mt-6 flex flex-wrap gap-3 justify-center items-center">
